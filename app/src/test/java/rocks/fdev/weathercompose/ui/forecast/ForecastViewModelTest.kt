@@ -9,7 +9,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.kotlin.any
+import org.mockito.kotlin.anyOrNull
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import retrofit2.Response
@@ -17,7 +17,6 @@ import rocks.fdev.weathercompose.data.OpenWeatherApi
 import rocks.fdev.weathercompose.fakeResponse
 import rocks.fdev.weathercompose.hoursBetweenForecasts
 import rocks.fdev.weathercompose.model.Forecast
-import rocks.fdev.weathercompose.model.Weather
 import rocks.fdev.weathercompose.model.WeatherForecast
 import rocks.fdev.weathercompose.testutil.CoroutinesTestRule
 import rocks.fdev.weathercompose.ui.InstantTaskExecutorRule
@@ -44,7 +43,7 @@ class ForecastViewModelTest {
     @Test
     fun `getWeatherFor fills livedata`() {
         runBlocking {
-            whenever(api.getForecast(any(), any(), any())).thenReturn(fakeResponse(fakeForecast()))
+            givenFakeForecastResponse()
         }
 
         sut.getWeatherFor("fake", hoursBetweenForecasts)
@@ -55,13 +54,12 @@ class ForecastViewModelTest {
     @Test
     fun `getWeatherFor returns only entries with 8 hoursBetween`() {
         runBlocking {
-            val forecast = fakeForecast()
-            whenever(api.getForecast(any(), any(), any())).thenReturn(fakeResponse(forecast))
-
-            sut.getWeatherFor("fake", 8)
-
-            hasOnlyForecastsWith(sut.forecast.value!!, 8)
+            givenFakeForecastResponse()
         }
+
+        sut.getWeatherFor("fake", 8)
+
+        hasOnlyForecastsWith(sut.forecast.value!!, 8)
     }
 
     private fun hasOnlyForecastsWith(forecast: WeatherForecast, hoursBetween: Int) {
@@ -86,12 +84,11 @@ class ForecastViewModelTest {
         )
     }
 
-    private fun fakeResponse(forecast: WeatherForecast): Response<WeatherForecast> {
-        return Response.success(forecast)
-    }
+    private suspend fun givenFakeForecastResponse() {
+        val fakeForecast = Gson().fromJson(fakeResponse, WeatherForecast::class.java)
+        val fakeResponse = Response.success(fakeForecast)
 
-    private fun fakeForecast(): WeatherForecast {
-        return Gson().fromJson(fakeResponse, WeatherForecast::class.java)
+        whenever(api.getForecast(anyOrNull(), anyOrNull(), anyOrNull())).thenReturn(fakeResponse)
     }
 
 }
