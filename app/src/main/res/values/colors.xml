@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="status_bar">@color/yellow_900</color>
+
+    <color name="yellow_50">#fef7e5</color>
+    <color name="yellow_100">#feebbe</color>
+    <color name="yellow_200">#fddd93</color>
+    <color name="yellow_300">#fccf68</color>
+    <color name="yellow_400">#fbc547</color>
+    <color name="yellow_500">#fabb27</color>
+    <color name="yellow_600">#f9b523</color>
+    <color name="yellow_700">#f9ac1d</color>
+    <color name="yellow_800">#f8a417</color>
+    <color name="yellow_900">#f6960e</color>
+    <color name="yellow_A100">#ffffff</color>
+    <color name="yellow_A200">#fff7ee</color>
+    <color name="yellow_A400">#ffe0bb</color>
+    <color name="yellow_A700">#ffd5a1</color>
+
+    <color name="blue_50">#e0e9f3</color>
+    <color name="blue_100">#b3c9e0</color>
+    <color name="blue_200">#80a5cc</color>
+    <color name="blue_300">#4d80b8</color>
+    <color name="blue_400">#2665a8</color>
+    <color name="blue_500">#004a99</color>
+    <color name="blue_600">#004391</color>
+    <color name="blue_700">#003a86</color>
+    <color name="blue_800">#00327c</color>
+    <color name="blue_900">#00226b</color>
+    <color name="blue_A100">#9ab1ff</color>
+    <color name="blue_A200">#678aff</color>
+    <color name="blue_A400">#3463ff</color>
+    <color name="blue_A700">#1a4fff</color>
+</resources>

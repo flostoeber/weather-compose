@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather Compose</string>
+    <string name="city_label">City name</string>
+    <string name="cd_navigate_up">Navigate up</string>
+    <string name="cd_navigate_detail">Show Details</string>
+    <string name="cd_weather_icon">Weather icon</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="pressure_formatted">%1$dhPa</string>
+    <string name="wind_speed">Wind speed</string>
+    <string name="wind_speed_formatted">%1$.1fkm/h</string>
+    <string name="wind_direction">Wind direction</string>
+    <string name="wind_direction_formatted">%1$d°</string>
+    <string name="temp_hot">(Hot)</string>
+    <string name="temp_formatted">%1$.0f / %2$.0f °C</string>
+    <string name="temp_formatted_abs">%1$.0f °C</string>
+    <string name="temp_cold">(Cold)</string>
+    <string name="rain">Rain</string>
+    <string name="rain_formatted">%1$f mm / 3h</string>
+    <string name="placeholder_empty">-</string>
+</resources>
