@@ -1,4 +1,7 @@
 # Weather Compose
+
+![build status](https://app.bitrise.io/app/cc4d478047229adf/status.svg?token=QokiOzN45TUwu46VBLnckg&branch=master)
+
 A sample Jetpack Compose Weather app to play around with.
 <br> • Master/Detail Screens<br>• Light & dark themes<br>• Resource loading<br>• UI Testing <br>• Unit Testing
 
